@@ -46,7 +46,6 @@ func main() {
 		return repositories[j].LastUpdated.Before(repositories[i].LastUpdated)
 	})
 
-	// Format in tab-separated columns with a tab stop of 8.
 	const padding = 1
 	w := tabwriter.NewWriter(os.Stdout, 0, 0, padding, ' ', tabwriter.Debug)
 
