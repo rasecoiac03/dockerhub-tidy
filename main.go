@@ -26,6 +26,8 @@ type RepositoriesResponse struct {
 type RepositoryResponse struct {
 	Name        string    `json:"name"`
 	LastUpdated time.Time `json:"last_updated"`
+	IsPrivate   bool      `json:"is_private"`
+	PullCount   int64     `json:"pull_count"`
 }
 
 func main() {
@@ -48,9 +50,9 @@ func main() {
 	const padding = 1
 	w := tabwriter.NewWriter(os.Stdout, 0, 0, padding, ' ', tabwriter.Debug)
 
-	fmt.Fprintln(w, "REPOSITORY\tLAST UPDATED\t")
+	fmt.Fprintln(w, "REPOSITORY\tPRIVATE\tPULL COUNT\tLAST UPDATED\t")
 	for _, r := range repositories {
-		fmt.Fprintf(w, "%s\t%s\t\n", r.Name, r.LastUpdated)
+		fmt.Fprintf(w, "%s\t%v\t%d\t%s\t\n", r.Name, r.IsPrivate, r.PullCount, r.LastUpdated)
 	}
 	w.Flush()
 }
