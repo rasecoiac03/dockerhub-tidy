@@ -41,7 +41,7 @@ func main() {
 	repositories := getRepositories(auth.Token, requestURL)
 	fmt.Println("repositories count:", len(repositories))
 
-	// sort reverse
+	// sort reverse by LastUpdated field
 	sort.Slice(repositories, func(i, j int) bool {
 		return repositories[j].LastUpdated.Before(repositories[i].LastUpdated)
 	})
