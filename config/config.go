@@ -6,7 +6,6 @@ import (
 )
 
 var config = map[string]string{
-	"LOG_LEVEL":          "debug",
 	"DOCKERHUB_BASE_URL": "https://hub.docker.com",
 	"DOCKER_USERNAME":    "",
 	"DOCKER_PASSWORD":    "",
