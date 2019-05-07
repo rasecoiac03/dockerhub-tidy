@@ -6,6 +6,6 @@ For now, it's just:
 go run main.go
 ```
 
-See, `config/config.go` to see what env vars you have to have.
+Check [config/config.go](config/config.go) for env vars you must have.
 
 ref. https://docs.docker.com/registry/spec/api/
